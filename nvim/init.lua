@@ -207,6 +207,15 @@ require("gitsigns").setup({
 
 require("ts-comments").setup()
 
+require("trouble").setup({})
+
+require("tailwind-tools").setup({})
+
+require("twilight").setup({})
+require("zen-mode").setup({ plugins = { tmux = { enabled = true }, twilight = { enabled = false } } })
+
+require("neogit").setup({})
+
 require("typescript-tools").setup({
 	settings = {
 		tsserver_plugins = {
@@ -218,7 +227,8 @@ require("typescript-tools").setup({
 
 require("fidget").setup({})
 
-require("todo-comments").setup({ signs = false })
+-- require("todo-comments").setup({ signs = false })
+require("todo-comments").setup({})
 
 -- Better Around/Inside textobjects
 --

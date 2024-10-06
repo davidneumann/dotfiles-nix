@@ -1,17 +1,19 @@
 { pkgs, lib, ... }:
 
 let
-  fromGitHub = ref: repo: pkgs.vimUtils.buildVimPlugin {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
-    src = builtins.fetchGit {
-      url = "https://github.com/${repo}.git";
-      ref = ref;
+  fromGitHub =
+    ref: repo:
+    pkgs.vimUtils.buildVimPlugin {
+      pname = "${lib.strings.sanitizeDerivationName repo}";
+      version = ref;
+      src = builtins.fetchGit {
+        url = "https://github.com/${repo}.git";
+        ref = ref;
+      };
     };
-  };
 in
 
-  {
+{
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -30,6 +32,48 @@ in
       oil-nvim
       nvim-autopairs
       nvim-ts-autotag
+      auto-session
+      git-blame-nvim
+      harpoon
+      neogen
+      vim-tmux-navigator
+      toggleterm-nvim
+      trouble-nvim
+      (fromGitHub "HEAD" "chrishrb/gx.nvim")
+
+      twilight-nvim
+      zen-mode-nvim
+
+      tailwind-tools-nvim
+      # tailwind tools deps
+      nvim-treesitter
+      telescope-nvim
+      nvim-lspconfig
+
+      nvim-spectre
+      # spectre deps. Also requires fzf & ripgrep
+      plenary-nvim
+
+      neogit
+      # neogit deps
+      plenary-nvim
+      telescope-nvim
+      diffview-nvim
+      fzf-lua
+
+      # neotest broken???
+      (fromGitHub "HEAD" "nvim-neotest/neotest")
+      # neotest deps
+      nvim-nio
+      plenary-nvim
+      FixCursorHold-nvim
+      nvim-treesitter.withAllGrammars
+      (fromGitHub "HEAD" "adrigzr/neotest-mocha")
+
+      # Markdown stuff
+      render-markdown-nvim
+      (fromGitHub "HEAD" "jannis-baum/vivify.vim")
+      obsidian-nvim
 
       nvim-cmp
       # nvim-cmp deps
