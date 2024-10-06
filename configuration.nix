@@ -199,6 +199,12 @@ in
     pasystray
     protontricks
     wowup-cf
+    xbindkeys
+    tk
+    xbindkeys-config
+    maim
+    peek
+    xclip
   ];
 
   programs.slock.enable = true;

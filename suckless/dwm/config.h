@@ -38,6 +38,8 @@ static const Rule rules[] = {
 	/* { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 }, */
 	{ "Nemo",        NULL,       NULL,       0,            1,           -1 },
 	{ "discord",     NULL,       NULL,       7,            0,           -1 },
+	{ "peek",        NULL,       NULL,       0,            1,           -1 },
+	{ "Peek",        NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
