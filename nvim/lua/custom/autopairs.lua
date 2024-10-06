@@ -3,7 +3,7 @@ if vim.g.did_load_autopairs_plugin then
 end
 vim.g.did_load_autopairs_plugin = true
 
-require("nvim-autopairs").setup({})
+require("nvim-autopairs").setup {}
 -- If you want to automatically add `(` after selecting a function or method
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 local cmp = require("cmp")

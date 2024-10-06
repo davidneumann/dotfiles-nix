@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 let
   homeDir = builtins.getEnv "HOME";
-  username = builtins.getEnv "USER";
 in
 {
   imports = [
