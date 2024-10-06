@@ -59,16 +59,18 @@ in
     pkgs.yazi
     pkgs.nodejs
 
-    pkgs.noto-fonts
-    pkgs.noto-fonts-cjk
-    pkgs.noto-fonts-emoji
+    # pkgs.noto-fonts
+    # pkgs.noto-fonts-cjk
+    # pkgs.noto-fonts-emoji
+    pkgs.meslo-lgs-nf
+    (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; })
     pkgs.liberation_ttf
     pkgs.fira-code
     pkgs.fira-code-symbols
-    pkgs.mplus-outline-fonts.githubRelease
-    pkgs.dina-font
+    # pkgs.mplus-outline-fonts.githubRelease
+    # pkgs.dina-font
     # pkgs.proggyfonts
-    (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; })
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.

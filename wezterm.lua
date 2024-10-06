@@ -34,6 +34,7 @@ config.hide_tab_bar_if_only_one_tab = true
 -- }
 
 config.color_scheme = "tokyonight_night"
+config.font = wezterm.font("MesloLGM Nerd Font")
 
 local launch_menu = {}
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
@@ -41,7 +42,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.keys = {
 		{ key = "m", mods = "ALT", action = wezterm.action.ShowLauncher },
 	}
-	config.font = wezterm.font("MesloLGM NF")
+	config.font = wezterm.font("MesloLGM Nerd Font")
 
 	table.insert(launch_menu, {
 		label = "PowerShell 7",

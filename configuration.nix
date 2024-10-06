@@ -279,8 +279,10 @@ in
   # Styling
   fonts = {
     packages = with pkgs; [
-      noto-fonts
-      noto-fonts-emoji
+      # noto-fonts
+      # noto-fonts-emoji
+      # meslo-lgs-nf
+      (nerdfonts.override { fonts = [ "Meslo" ]; })
     ];
 
     fontconfig = {
