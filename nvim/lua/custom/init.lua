@@ -1,0 +1,7 @@
+require("custom.lspconfig")
+require("custom.telescope")
+require("custom.which-key")
+require("custom.format")
+require("custom.autopairs")
+require("custom.cmp")
+require("custom.dap")
