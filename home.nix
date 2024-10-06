@@ -96,6 +96,7 @@ in
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/system/dotfiles-nix/nvim";
     ".xprofile".source = "${homeDir}/system/dotfiles-nix/xprofile";
     ".config/nvim-old".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/system/nvim-2025";
+    ".Xresources".source = "${homeDir}/system/dotfiles-nix/Xresources";
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
