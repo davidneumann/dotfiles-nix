@@ -94,11 +94,7 @@ in
   home.file = {
     ".config/wezterm/wezterm.lua".source = "${homeDir}/system/dotfiles-nix/wezterm.lua";
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/system/dotfiles-nix/nvim";
-    # ".zshrc".source = "${homeDir}/system/dotfiles-nix/zsh/zshrc";
     ".xprofile".source = "${homeDir}/system/dotfiles-nix/xprofile";
-    ".config/zsh/per-directory-history.zsh".source = "${homeDir}/system/dotfiles-nix/zsh/per-directory-history.zsh";
-    # ".config/tmux/tmux-cht-languages".source = "${homeDir}/system/dotfiles-nix/tmuxconf/tmux-cht-languages";
-    # ".config/tmux/tmux-cht-command".source = "${homeDir}/system/dotfiles-nix/tmuxconf/tmux-cht-command";
     ".config/nvim-old".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/system/nvim-2025";
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -156,7 +152,7 @@ in
       ''
         autoload -Uz add-zsh-hook
         eval "$(oh-my-posh --init --shell zsh --config $HOME/system/dotfiles-nix/myposh.omp.json)"
-        source $HOME/system/dotfiles-nix/zsh/lscolors.sh
+        source $HOME/system/dotfiles-nix/lscolors.sh
       '';
 
     shellAliases = {
