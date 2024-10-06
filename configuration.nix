@@ -248,7 +248,7 @@ in
   # services.xserver.desktopManager.gnome.enable = true;
   services.xserver.windowManager.dwm.enable = true;
   services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
-    src = /. + "${homeDir}/system/dotfiles/suckless/dwm";
+    src = /. + "${homeDir}/system/dotfiles-nix/suckless/dwm";
   };
   hardware.graphics.enable32Bit = true;
 
@@ -305,12 +305,12 @@ in
   nixpkgs.overlays = [
     (final: prev: {
       slstatus = prev.slstatus.overrideAttrs (old: {
-        src = /. + "${homeDir}/system/dotfiles/suckless/slstatus";
+        src = /. + "${homeDir}/system/dotfiles-nix/suckless/slstatus";
       });
     })
     (final: prev: {
       slock = prev.slock.overrideAttrs (old: {
-        src = /. + "${homeDir}/system/dotfiles/suckless/slock";
+        src = /. + "${homeDir}/system/dotfiles-nix/suckless/slock";
         buildInputs = old.buildInputs ++ [
           pkgs.xorg.libXinerama
           pkgs.imlib2
