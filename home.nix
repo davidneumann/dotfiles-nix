@@ -155,6 +155,10 @@ in
         autoload -Uz add-zsh-hook
         eval "$(oh-my-posh --init --shell zsh --config $HOME/system/dotfiles-nix/myposh.omp.json)"
         source $HOME/system/dotfiles-nix/lscolors.sh
+        bindkey -e
+        bindkey '^H' backward-kill-word
+        bindkey "^[[1;5C" forward-word
+        bindkey "^[[1;5D" backward-word
       '';
 
     shellAliases = {

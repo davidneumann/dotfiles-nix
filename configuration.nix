@@ -113,7 +113,11 @@ in
   # Allow unfree
   nixpkgs.config.allowUnfree = true;
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   # users.users.david.isNormalUser = true;
