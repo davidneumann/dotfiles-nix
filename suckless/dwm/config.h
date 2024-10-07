@@ -71,8 +71,6 @@ static const Layout layouts[] = {
 #include <X11/XF86keysym.h>
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *screenshot[] = { "escrotum", "-s", "-C", NULL };
-static const char *screenrecord[] = { "/home/bytientdavid/.local/scripts/record", NULL };
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *upvol[]   = { "/bin/pulseaudio-ctl", "up", "5",      NULL };
 static const char *downvol[]   = { "/bin/pulseaudio-ctl", "down", "5",      NULL };
@@ -80,8 +78,6 @@ static const char *lock[]   = { "slock", "-m Locked: bytientdavid",      NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot } },
-	{ MODKEY|ShiftMask,             XK_r,      spawn,          {.v = screenrecord } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
