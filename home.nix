@@ -98,6 +98,17 @@ in
     ".xprofile".source = "${homeDir}/system/dotfiles-nix/xprofile";
     ".config/nvim-old".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/system/nvim-2025";
     ".Xresources".source = "${homeDir}/system/dotfiles-nix/Xresources";
+    ".xbindkeysrc".text = ''
+      #Screenshot
+      "maim -s | xclip -selection clipboard -t image/png"
+          m:0x5 + c:39
+          Control+Shift + s
+
+      #Record
+      "peek"
+          m:0x5 + c:27
+          Control+Shift + r
+    '';
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
