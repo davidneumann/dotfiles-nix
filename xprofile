@@ -1,5 +1,6 @@
 slstatus &
 xrandr --output DP-0 --mode 5120x1440 &
+xbindkeys &
 xautolock -time 30 -locker slock &
 pasystray &
 discord &

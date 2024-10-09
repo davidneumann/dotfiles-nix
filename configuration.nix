@@ -253,7 +253,15 @@ in
   system.stateVersion = "24.11"; # Did you read the comment?
 
   # programs.sway.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    greeters.slick.enable = true;
+  };
+  services.xserver.displayManager.setupCommands = ''
+    ${pkgs.xorg.xrandr}/bin/xrandr --output DP-0 --mode 5120x1440
+  '';
+
   services.xserver.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
   services.xserver.windowManager.dwm.enable = true;
