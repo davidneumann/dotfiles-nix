@@ -290,6 +290,9 @@ in
     packages = with pkgs; [
       (nerdfonts.override { fonts = [ "Meslo" ]; })
       noto-fonts
+      # roboto
+      corefonts
+      # vistafonts
       noto-fonts-cjk
       noto-fonts-emoji
       liberation_ttf
