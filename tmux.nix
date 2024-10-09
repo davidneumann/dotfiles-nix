@@ -93,11 +93,11 @@
             set -g @resurrect-restore 'R'
           ''
           + ''
-            # Taken from: https://github.com/p3t33/nixos_flake/blob/5a989e5af403b4efe296be6f39ffe6d5d440d6d6/home/modules/tmux.nix
-            resurrect_dir="$XDG_CACHE_HOME/.tmux/resurrect"
-            set -g @resurrect-dir $resurrect_dir
-
-            set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
+            # # Taken from: https://github.com/p3t33/nixos_flake/blob/5a989e5af403b4efe296be6f39ffe6d5d440d6d6/home/modules/tmux.nix
+            # resurrect_dir="$XDG_CACHE_HOME/.tmux/resurrect"
+            # set -g @resurrect-dir $resurrect_dir
+            #
+            # set -g @resurrect-hook-post-save-all 'target=$(readlink -f $resurrect_dir/last); sed "s| --cmd .*-vim-pack-dir||g; s|/etc/profiles/per-user/$USER/bin/||g; s|/home/$USER/.nix-profile/bin/||g" $target | sponge $target'
           '';
       }
       {
