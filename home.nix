@@ -49,7 +49,8 @@ in
     pkgs.fzf
     pkgs.ripgrep
     pkgs.unzip
-    pkgs.go
+    pkgs.go_1_23
+    pkgs.gopls
     pkgs.zig
     pkgs.vim
     pkgs.google-chrome

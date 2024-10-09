@@ -16,8 +16,8 @@ if vim.loop.os_uname().sysname == "Windows_NT" then
 	for option, value in pairs(powershell_options) do
 		vim.opt[option] = value
 	end
-
-	vim.keymap.set("n", "<C-/>", ":ToggleTerm direction=float <cr>", { desc = "Toggle floating term" })
 end
+
+vim.keymap.set("n", "<C-/>", ":ToggleTerm direction=float <cr>", { desc = "Toggle floating term" })
 
 require("toggleterm").setup({})
