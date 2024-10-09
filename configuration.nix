@@ -263,15 +263,6 @@ in
   hardware.graphics.enable32Bit = true;
 
   #    fonts.packages = with pkgs; [
-  #   noto-fonts
-  #   noto-fonts-cjk
-  #   noto-fonts-emoji
-  #   liberation_ttf
-  #   fira-code
-  #   fira-code-symbols
-  #   mplus-outline-fonts.githubRelease
-  #   dina-font
-  #   proggyfonts
   #   (nerdfonts.override { fonts = [ "Meslo" ]; })
   # ];
 
@@ -289,10 +280,16 @@ in
   # Styling
   fonts = {
     packages = with pkgs; [
-      # noto-fonts
-      # noto-fonts-emoji
-      # meslo-lgs-nf
       (nerdfonts.override { fonts = [ "Meslo" ]; })
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      mplus-outline-fonts.githubRelease
+      dina-font
+      proggyfonts
     ];
 
     fontconfig = {
