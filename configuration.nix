@@ -40,7 +40,7 @@ in
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
   # console = {
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
@@ -268,13 +268,20 @@ in
   services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
     src = /. + "${homeDir}/system/dotfiles-nix/suckless/dwm";
   };
+  services.libinput.mouse = {
+    middleEmulation = false;
+    accelProfile = "flat";
+    accelSpeed = "-0.50";
+  };
+  services.libinput.touchpad.middleEmulation = false;
+
   hardware.graphics.enable32Bit = true;
 
   #    fonts.packages = with pkgs; [
   #   (nerdfonts.override { fonts = [ "Meslo" ]; })
   # ];
 
-  fonts.enableDefaultPackages = true;
+  # fonts.enableDefaultPackages = true;
   fonts.enableGhostscriptFonts = true;
 
   # fonts = {
@@ -291,34 +298,45 @@ in
       (nerdfonts.override { fonts = [ "Meslo" ]; })
       noto-fonts
       # roboto
-      corefonts
+      # corefonts
       # vistafonts
       noto-fonts-cjk
       noto-fonts-emoji
-      liberation_ttf
-      fira-code
-      fira-code-symbols
-      mplus-outline-fonts.githubRelease
-      dina-font
-      proggyfonts
+      # liberation_ttf
+      # fira-code
+      # fira-code-symbols
+      # mplus-outline-fonts.githubRelease
+      # dina-font
+      # proggyfonts
+      # lato
+      inter
+      # overpass
+      # liberation_ttf
+      # open-sans
+      # ubuntu_font_family
     ];
 
     fontconfig = {
       # Fixes pixelation
       antialias = true;
 
-      # Fixes antialiasing blur
-      hinting = {
-        enable = true;
-        style = "full"; # no difference
-        autohint = true; # no difference
+      defaultFonts = {
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Inter" ];
       };
 
-      subpixel = {
-        # Makes it bolder
-        rgba = "rgb";
-        lcdfilter = "default"; # no difference
-      };
+      # Fixes antialiasing blur
+      # hinting = {
+      #   enable = true;
+      #   style = "full"; # no difference
+      #   autohint = true; # no difference
+      # };
+
+      # subpixel = {
+      #   # Makes it bolder
+      #   rgba = "rgb";
+      #   lcdfilter = "default"; # no difference
+      # };
     };
   };
 

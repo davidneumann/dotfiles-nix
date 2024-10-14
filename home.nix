@@ -11,11 +11,35 @@ in
   xdg.mime.enable = true;
   targets.genericLinux.enable = true;
 
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "Adwaita-dark";
+  #     package = pkgs.gnome-themes-extra;
+  #   };
+  # };
   gtk = {
     enable = true;
+    iconTheme = {
+      name = "elementary-Xfce-dark";
+      package = pkgs.elementary-xfce-icon-theme;
+    };
+
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+      name = "zukitre-dark";
+      package = pkgs.zuki-themes;
+    };
+
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
     };
   };
 
@@ -65,9 +89,9 @@ in
     # pkgs.noto-fonts-emoji
     pkgs.meslo-lgs-nf
     (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; })
-    pkgs.liberation_ttf
-    pkgs.fira-code
-    pkgs.fira-code-symbols
+    # pkgs.liberation_ttf
+    # pkgs.fira-code
+    # pkgs.fira-code-symbols
     # pkgs.mplus-outline-fonts.githubRelease
     # pkgs.dina-font
     # pkgs.proggyfonts
