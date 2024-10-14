@@ -205,6 +205,9 @@ in
     maim
     peek
     xclip
+    gparted
+    killall
+    element-desktop
   ];
 
   programs.slock.enable = true;
@@ -291,6 +294,8 @@ in
   # };
   # fonts.fontconfig.hinting.enable = true;
   # fonts.fontconfig.subpixel.rgba = "rgb";
+
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Styling
   fonts = {
