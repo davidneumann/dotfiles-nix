@@ -134,6 +134,7 @@ in
           m:0x5 + c:27
           Control+Shift + r
     '';
+    ".local/scripts/tmux-sessionizer".source = "${homeDir}/system/dotfiles-nix/tmux-sessionizer";
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -195,6 +196,8 @@ in
         bindkey '^H' backward-kill-word
         bindkey "^[[1;5C" forward-word
         bindkey "^[[1;5D" backward-word
+        export PATH=$PATH:$HOME/.local/scripts/
+        export PER_DIRECTORY_HISTORY_TOGGLE='^G'
       '';
 
     shellAliases = {

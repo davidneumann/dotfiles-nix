@@ -11,7 +11,7 @@
     # lsof
     # # for tmux super fingers
     # python311
-    tmux-sessionizer
+    # tmux-sessionizer
   ];
 
   programs.tmux = {
@@ -56,6 +56,12 @@
             sha256 = "0lg3zcyd76qfbz90i01jwhxfglsnmggynh6v48lnbz0kj1prik4y";
           };
         };
+      }
+      {
+        plugin = tmux-fzf;
+        extraConfig = ''
+          bind-key -r "s" run-shell -b "${pkgs.tmuxPlugins.tmux-fzf}/share/tmux-plugins/tmux-fzf/scripts/session.sh switch"
+        '';
       }
       # must be before continuum edits right status bar
       {
@@ -144,12 +150,11 @@
 
       set -g base-index 1
 
-      # bind-key -r s display-pop -E "tms"
-      bind-key -r s display-pop -E "tms switch"
+      # bind-key -r s display-pop -E "tms switch"
 
       # forget the find window.  That is for chumps
-      # bind-key f run-shell "tmux neww ~/.local/scripts/tmux-sessionizer"
-      bind-key f display-pop -E "tms"
+      bind-key f run-shell "tmux neww ~/.local/scripts/tmux-sessionizer"
+      # bind-key f display-pop -E "tms"
       # bind-key i run-shell "tmux neww ~/.local/scripts/tmux-cht.sh"
 
       set -g status-right " #(tms sessions)"
