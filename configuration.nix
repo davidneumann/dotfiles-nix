@@ -213,6 +213,8 @@ in
     element-desktop
     python312Packages.rns
     bambu-studio
+    dunst
+    libnotify
   ];
 
   programs.slock.enable = true;
