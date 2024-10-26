@@ -212,6 +212,7 @@ in
     killall
     element-desktop
     python312Packages.rns
+    bambu-studio
   ];
 
   programs.slock.enable = true;
