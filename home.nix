@@ -83,6 +83,7 @@ in
     pkgs.lazygit
     pkgs.yazi
     pkgs.nodejs
+    pkgs.chromedriver
 
     # pkgs.noto-fonts
     # pkgs.noto-fonts-cjk
@@ -117,6 +118,7 @@ in
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
+  # 
   home.file = {
     ".config/wezterm/wezterm.lua".source = "${homeDir}/system/dotfiles-nix/wezterm.lua";
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/system/dotfiles-nix/nvim";
@@ -131,8 +133,8 @@ in
 
       #Record
       "peek"
-          m:0x5 + c:27
-          Control+Shift + r
+          m:0xd + c:27
+          Control+Shift+Alt + r
     '';
     ".local/scripts/tmux-sessionizer".source = "${homeDir}/system/dotfiles-nix/tmux-sessionizer";
 

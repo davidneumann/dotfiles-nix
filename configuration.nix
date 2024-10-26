@@ -211,6 +211,7 @@ in
     gparted
     killall
     element-desktop
+    atac
     python312Packages.rns
     bambu-studio
     dunst
