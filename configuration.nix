@@ -125,7 +125,10 @@ in
   users.users.david = {
 
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel" # Enable ‘sudo’ for the user.
+      "dialout" # usb serial
+    ];
     shell = pkgs.zsh;
   };
 
@@ -208,6 +211,7 @@ in
     gparted
     killall
     element-desktop
+    python312Packages.rns
   ];
 
   programs.slock.enable = true;
